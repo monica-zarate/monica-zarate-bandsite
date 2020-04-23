@@ -1,0 +1,202 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url("/assets/global-font/avenir-next-pro-lt/Linotype\ -\ AvenirNextLTPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "Avenir Next Demi Bold";
+  src: url("/assets/global-font/avenir-next-pro-lt/Linotype\ -\ AvenirNextLTPro-Demi.otf");
+}
+
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("/assets/global-font/avenir-next-pro-lt/alternative-files/Linotype\ -\ Avenir\ Next\ LT\ Pro\ Bold.ttf");
+}
+
+// Global Styles
+
+html {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $primary-font;
+}
+
+// Header & Nav
+
+.header {
+  background-color: $primary-color;
+  color: $bg-primary-color;
+  height: 5rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__url {
+    height: 3rem;
+  }
+
+  &__logo {
+    margin: 1rem 0;
+  }
+  &__links {
+    @include lists;
+    font-family: $primary-font-demi;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+    &-content,
+    &-content--active {
+      text-align: center;
+      width: 50%;
+    }
+
+    &-content--active {
+      color: $secondary-color;
+      border-bottom: 5px solid $secondary-color;
+      padding-bottom: 7px;
+    }
+  }
+}
+
+// Hero
+
+.hero {
+  background-image: url(/assets/images/hero.jpg);
+  // background-position: center;
+  background-size: cover;
+  height: 11.4rem;
+  display: flex;
+  align-items: center;
+
+  &__title {
+    margin: 0 0 0 1rem;
+    font-family: $primary-font-bold;
+    color: $secondary-color;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+// About Section
+
+.about {
+  padding: 2rem 1rem 2.5rem 1rem;
+
+  &__title {
+    font-family: $primary-font-demi;
+    text-transform: capitalize;
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  &__img {
+    width: 18rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    font-family: $primary-font;
+    font-size: 0.75rem;
+
+    &--quote,
+    &--author,
+    &--title {
+      font-family: $primary-font-demi;
+    }
+    &--quote {
+      margin-bottom: 2rem;
+    }
+
+    &--author {
+      margin-bottom: 2.5rem;
+    }
+
+    &--title {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+// Gallery
+
+.gallery {
+  background-color: $secondary-color;
+  padding: 2rem 1rem;
+
+  &__title {
+    font-family: $primary-font-bold;
+    margin-bottom: 1.5rem;
+  }
+
+  &__wrapper {
+  }
+
+  &__img {
+    width: 18rem;
+    padding-bottom: 1rem;
+  }
+}
+
+// Footer
+
+.footer {
+  background-color: $primary-color;
+  color: $bg-primary-color;
+  font-family: $primary-font;
+  padding: 2rem 1rem;
+
+  &__title {
+    text-transform: capitalize;
+    font-family: $primary-font-bold;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__social {
+    margin-bottom: 1.5rem;
+  }
+
+  &__icons {
+    margin-right: 1.5rem;
+  }
+
+  &__contact {
+    @include lists;
+  }
+
+  &__contact * {
+    margin-bottom: 1.5rem;
+  }
+
+  &__contact-can,
+  &__contact-america,
+  &__contact-eu {
+    font-size: 0.6rem;
+  }
+
+  &__contact-can--bold,
+  &__contact-america--bold,
+  &__contact-eu--bold {
+    font-family: $primary-font-demi;
+    font-size: 0.75rem;
+  }
+
+  &__copyright {
+    font-size: 0.6rem;
+  }
+}
