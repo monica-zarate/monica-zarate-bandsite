@@ -29,12 +29,25 @@ html {
   font-family: $primary-font;
 }
 
+body {
+  min-width: $mobile-width;
+
+  @include tablet {
+  }
+}
+
 // Header & Nav
 
 .header {
   background-color: $primary-color;
   color: $bg-primary-color;
   height: 5rem;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 
 .nav {
@@ -44,12 +57,22 @@ html {
   justify-content: center;
   align-items: center;
 
+  @include tablet {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
   &__url {
     height: 3rem;
   }
 
   &__logo {
     margin: 1rem 0;
+
+    @include tablet {
+      margin-left: 1.5rem;
+      width: 7.5rem;
+    }
   }
   &__links {
     @include lists;
@@ -58,16 +81,31 @@ html {
     width: 100%;
     justify-content: space-evenly;
 
+    @include tablet {
+      width: 15.5rem;
+      height: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
     &-content,
     &-content--active {
       text-align: center;
       width: 50%;
+      font-size: 0.7rem;
+
+      @include tablet {
+        width: 30%;
+      }
     }
 
     &-content--active {
       color: $secondary-color;
       border-bottom: 5px solid $secondary-color;
-      padding-bottom: 7px;
+      padding-bottom: 13px;
+
+      @include tablet {
+        border-bottom: 3px solid $secondary-color;
+      }
     }
   }
 }
@@ -76,11 +114,14 @@ html {
 
 .hero {
   background-image: url(/assets/images/hero.jpg);
-  // background-position: center;
   background-size: cover;
   height: 11.4rem;
   display: flex;
   align-items: center;
+
+  @include tablet {
+    height: 25rem;
+  }
 
   &__title {
     margin: 0 0 0 1rem;
@@ -88,6 +129,12 @@ html {
     color: $secondary-color;
     font-size: 1.5rem;
     line-height: 2rem;
+
+    @include tablet {
+      margin: 0 0 0 1.5rem;
+      font-size: 3.8rem;
+      line-height: 5rem;
+    }
   }
 }
 
@@ -96,27 +143,51 @@ html {
 .about {
   padding: 2rem 1rem 2.5rem 1rem;
 
+  @include tablet {
+    padding: 2rem 1.5rem 3rem 1.5rem;
+    width: 45rem;
+  }
+
   &__title {
     font-family: $primary-font-demi;
-    text-transform: capitalize;
     margin: 0;
     margin-bottom: 1.5rem;
+
+    @include tablet {
+      font-family: $primary-font-bold;
+      width: 22.5rem;
+      font-size: 2.2rem;
+    }
   }
 
   &__img {
     width: 18rem;
     margin-bottom: 1.5rem;
+
+    @include tablet {
+      width: 45rem;
+    }
   }
 
   &__text {
     font-family: $primary-font;
     font-size: 0.75rem;
 
-    &--quote,
-    &--author,
-    &--title {
-      font-family: $primary-font-demi;
+    @include tablet {
+      line-height: 1.5rem;
+      font-size: 1rem;
     }
+
+    &--right {
+      font-size: 0.75rem;
+
+      @include tablet {
+        margin-left: 1.5rem;
+        line-height: 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
     &--quote {
       margin-bottom: 2rem;
     }
@@ -129,6 +200,26 @@ html {
       margin-bottom: 1.5rem;
       font-size: 1rem;
     }
+
+    &--quote,
+    &--author,
+    &--title {
+      font-family: $primary-font-demi;
+    }
+
+    @include tablet {
+      &--quote,
+      &--title {
+        font-family: $primary-font-bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__text-wrapper {
+    @include tablet {
+      display: flex;
+    }
   }
 }
 
@@ -138,17 +229,35 @@ html {
   background-color: $secondary-color;
   padding: 2rem 1rem;
 
+  @include tablet {
+    padding: 3rem 1.5rem 2rem 1.5rem;
+  }
+
   &__title {
     font-family: $primary-font-bold;
     margin-bottom: 1.5rem;
+
+    @include tablet {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+    }
   }
 
   &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__img {
     width: 18rem;
     padding-bottom: 1rem;
+
+    @include tablet {
+      width: 14rem;
+      padding-bottom: 1.5rem;
+    }
   }
 }
 
@@ -160,6 +269,19 @@ html {
   font-family: $primary-font;
   padding: 2rem 1rem;
 
+  @include tablet {
+    padding: 2.5rem 1.5rem;
+  }
+
+  &__headings {
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      align-items: baseline;
+      position: relative;
+    }
+  }
+
   &__title {
     text-transform: capitalize;
     font-family: $primary-font-bold;
@@ -169,14 +291,34 @@ html {
 
   &__social {
     margin-bottom: 1.5rem;
+
+    @include tablet {
+      margin-left: 4rem;
+    }
   }
 
   &__icons {
     margin-right: 1.5rem;
+
+    &--display {
+      display: none;
+
+      @include tablet {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 1rem;
+      }
+    }
   }
 
   &__contact {
     @include lists;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__contact * {
@@ -187,6 +329,10 @@ html {
   &__contact-america,
   &__contact-eu {
     font-size: 0.6rem;
+
+    @include tablet {
+      font-size: 0.75rem;
+    }
   }
 
   &__contact-can--bold,
@@ -194,9 +340,17 @@ html {
   &__contact-eu--bold {
     font-family: $primary-font-demi;
     font-size: 0.75rem;
+
+    @include tablet {
+      font-size: 0.85rem;
+    }
   }
 
   &__copyright {
     font-size: 0.6rem;
+    width: 55%;
+
+    @include tablet {
+    }
   }
 }
