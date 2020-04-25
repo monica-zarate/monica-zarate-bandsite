@@ -1,9 +1,11 @@
-@mixin lists {
-  list-style: $list-reset;
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
 }
 
-@mixin tablet {
-  @media (min-width: 321px) and (max-width: $tablet-width) {
+@mixin desktop {
+  @media (min-width: $desktop-width) {
     @content;
   }
 }
