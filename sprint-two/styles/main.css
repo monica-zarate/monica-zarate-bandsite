@@ -49,19 +49,21 @@
 }
 
 .nav__logo {
-  margin: 1rem 0;
+  overflow: visible;
+  margin: 0.5rem 0 0 0;
+  width: 100%;
+  height: 2rem;
 }
 
 @media (min-width: 768px) {
   .nav__logo {
-    margin-left: 1.5rem;
-    width: 7.5rem;
+    margin: 0.75rem 0 0 1.5rem;
   }
 }
 
 @media (min-width: 1440px) {
   .nav__logo {
-    margin-left: 0;
+    margin: 0.5rem 0 0 0;
   }
 }
 
