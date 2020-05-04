@@ -1,0 +1,132 @@
+// Footer
+
+.footer {
+  background-color: $primary-color;
+  color: $bg-primary-color;
+  font-family: $primary-font;
+  padding: 2rem 1rem;
+
+  @include tablet {
+    padding: 2.5rem 1.5rem;
+  }
+
+  @include desktop {
+    padding: 3rem 11.5rem;
+  }
+
+  &__headings {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      position: relative;
+    }
+
+    @include desktop {
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  &__title {
+    text-transform: capitalize;
+    font-family: $primary-font-bold;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__social {
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+    }
+  }
+
+  &__social-wrapper {
+    @extend .flex-center;
+    justify-content: flex-start;
+
+    @include tablet {
+      width: 30rem;
+      justify-content: space-between;
+      padding-left: 4rem;
+    }
+
+    @include desktop {
+      width: 80%;
+      justify-content: space-between;
+    }
+  }
+
+  &__icons {
+    margin-right: 1.5rem;
+
+    &--display {
+      display: none;
+
+      @include tablet {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__contact {
+    list-style: $list-reset;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      margin-bottom: 2.5rem;
+      width: 70%;
+    }
+  }
+
+  &__contact * {
+    margin-bottom: 1.5rem;
+
+    @include desktop {
+      margin: 0;
+    }
+  }
+
+  &__contact-can,
+  &__contact-america,
+  &__contact-eu {
+    font-size: 0.7rem;
+
+    @include tablet {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__contact-can--bold,
+  &__contact-america--bold,
+  &__contact-eu--bold {
+    font-family: $primary-font-demi;
+    font-size: 0.75rem;
+
+    @include tablet {
+      font-size: 0.9rem;
+    }
+
+    @include desktop {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__copyright {
+    font-size: 0.7rem;
+    width: 65%;
+
+    @include tablet {
+      font-size: 0.95rem;
+    }
+
+    @include desktop {
+      font-size: 0.95rem;
+    }
+  }
+}

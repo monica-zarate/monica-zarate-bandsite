@@ -1,0 +1,145 @@
+// Shows Section
+
+.shows {
+  padding: 2rem 1rem 2.5rem 1rem;
+
+  @include tablet {
+    padding: 2rem 1.5rem 3rem 1.5rem;
+  }
+
+  @include desktop {
+    width: 78.5rem;
+    padding: 3rem 11.5rem;
+    width: unset;
+  }
+
+  &__title {
+    font-family: $primary-font-bold;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+
+    @include desktop {
+      margin-left: 17.25rem;
+      width: 50.25rem;
+    }
+  }
+
+  &__details {
+    margin: 0 0 1.5rem 0;
+
+    @include tablet {
+      margin: 0;
+    }
+    &--date {
+      font-family: $primary-font-demi;
+      margin: 0 0 1.5rem 0;
+      @include tablet {
+        margin: 0;
+      }
+    }
+
+    &--tab {
+      list-style: none;
+      display: none;
+
+      @include tablet {
+        display: flex;
+        font-family: $primary-font;
+        color: $divider-color;
+        font-size: 1rem;
+        margin: 2.5rem 0 0 0;
+        width: 68%;
+      }
+
+      @include desktop {
+        margin: 2.5rem 0 1.5rem 0;
+      }
+    }
+
+    &--mid {
+      @include tablet {
+        margin-left: 9.4rem;
+      }
+
+      @include desktop {
+        margin-left: 11.5rem;
+      }
+    }
+
+    &--right {
+      @include tablet {
+        margin-left: 6.5rem;
+      }
+
+      @include desktop {
+        margin-left: 8.3rem;
+      }
+    }
+
+    &--mob {
+      font-family: $primary-font-demi;
+      color: $divider-color;
+      font-size: 0.8rem;
+      margin: 0 0 1rem 0;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--btn {
+    }
+  }
+
+  &__info {
+    list-style: none;
+    border-bottom: 1px solid $divider-color;
+    padding: 2rem 0 1rem 0;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      padding: 1rem 0;
+    }
+  }
+
+  &__btn {
+    color: $secondary-color;
+    background-color: $primary-color;
+    font-family: $primary-font-demi;
+    padding: 1rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid $secondary-color;
+    width: 100%;
+
+    &__btn:hover {
+      background-color: $btn-hover;
+    }
+
+    @include tablet {
+      padding: 1rem 2rem;
+    }
+
+    @include desktop {
+      height: 3rem;
+      padding: 0.5rem 0;
+      width: 10rem;
+      font-size: 0.8rem;
+    }
+  }
+}
