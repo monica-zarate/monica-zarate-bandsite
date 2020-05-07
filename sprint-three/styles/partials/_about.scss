@@ -1,0 +1,133 @@
+// About Section
+
+.about {
+  padding: 2rem 1rem 2.5rem 1rem;
+
+  @include tablet {
+    padding: 2rem 1.5rem 3rem 1.5rem;
+  }
+
+  @include desktop {
+    width: 78.5rem;
+    padding: 3rem 11.5rem;
+    width: unset;
+  }
+
+  &__title {
+    font-family: $primary-font-demi;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+
+    @include tablet {
+      font-family: $primary-font-bold;
+      width: 22.5rem;
+      font-size: 2.2rem;
+      text-transform: none;
+    }
+
+    @include desktop {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__img {
+    width: 18rem;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+      width: 45rem;
+    }
+
+    @include desktop {
+      width: 100%;
+      align-content: center;
+      padding: 0 5.75rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__text {
+    font-family: $primary-font;
+    font-size: 0.75rem;
+
+    @include tablet {
+      line-height: 1.5rem;
+      font-size: 1rem;
+    }
+
+    @include desktop {
+      font-size: 0.9rem;
+      padding-left: 5.75rem;
+    }
+
+    &--right {
+      font-size: 0.75rem;
+
+      @include tablet {
+        margin-left: 1.5rem;
+        line-height: 1.5rem;
+        font-size: 1rem;
+      }
+
+      @include desktop {
+        margin-left: 2.5rem;
+        font-size: 0.9rem;
+        padding-right: 5.75rem;
+      }
+    }
+
+    &--quote {
+      margin-bottom: 2rem;
+
+      @include desktop {
+        margin-bottom: 2.5rem;
+        width: 90%;
+        padding: 0 5.75rem;
+      }
+    }
+
+    &--author {
+      margin-bottom: 2.5rem;
+
+      @include desktop {
+        margin-bottom: 3.5rem;
+        padding: 0 5.75rem;
+      }
+    }
+
+    &--title {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+
+      @include desktop {
+        margin-bottom: 2rem;
+        padding: 0 5.75rem;
+      }
+    }
+
+    &--quote,
+    &--author,
+    &--title {
+      font-family: $primary-font-demi;
+    }
+
+    &--quote,
+    &--title {
+      @include tablet {
+        font-family: $primary-font-bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__text-wrapper {
+    @include tablet {
+      display: flex;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,205 @@
+// Comments Section
+
+.comment {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  font-family: $primary-font-bold;
+  color: $primary-color;
+
+  @include tablet {
+    padding: 2rem 1.5rem;
+  }
+
+  @include desktop {
+    padding: 3rem 11.25rem 2.5rem 11.25rem;
+  }
+
+  &__title {
+    color: $primary-color;
+    font-size: 1.5rem;
+    font-family: $primary-font-bold;
+
+    @include tablet {
+      font-size: 2.2rem;
+    }
+
+    @include desktop {
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 14rem;
+    padding-bottom: 2rem;
+
+    @include tablet {
+      width: 27rem;
+    }
+
+    @include desktop {
+      width: 28.75rem;
+      padding-bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    border-bottom: 1px solid $bg-primary-color;
+
+    @include tablet {
+      margin: 2.5rem 7rem 0 7rem;
+    }
+
+    @include desktop {
+      margin: 3.5rem 17.25rem 0 17.25rem;
+    }
+  }
+
+  &__user-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.75rem;
+    margin-top: 0.75rem;
+
+    @include desktop {
+      margin-right: 1.25rem;
+    }
+  }
+
+  &__input {
+    color: $bg-primary-color;
+    font-size: 0.75rem;
+    font-family: $primary-font-demi;
+  }
+
+  &__input-username {
+    @include desktop {
+      height: 3rem;
+    }
+  }
+
+  &__comment-area {
+    resize: none;
+    @include desktop {
+      height: 6rem;
+    }
+  }
+
+  &__input-username,
+  &__comment-area {
+    margin: 0.2rem 0 1rem 0;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border-style: none;
+    border: 1px solid $bg-primary-color;
+
+    &:focus {
+      border: 2px solid $btn-hover;
+      outline: none;
+    }
+
+    @include tablet {
+      width: 27rem;
+    }
+
+    @include desktop {
+      margin: 0.5rem 0 1.5rem 0;
+      width: 28.75rem;
+      padding: 1rem;
+    }
+  }
+
+  &__btn {
+    color: $secondary-color;
+    background-color: $primary-color;
+    font-family: $primary-font-demi;
+    padding: 1rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid $secondary-color;
+
+    &__btn:hover {
+      background-color: $btn-hover;
+    }
+
+    @include tablet {
+      width: 9.5rem;
+      margin: 0 0 1.5rem 17.5rem;
+    }
+
+    @include desktop {
+      height: 3rem;
+      padding: 0.5rem 0;
+      width: 10rem;
+      margin-left: 18.9rem;
+    }
+  }
+}
+
+// Comments Post Section
+
+.post {
+  display: flex;
+  font-family: $primary-font;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid $bg-primary-color;
+
+  @include tablet {
+    margin: 0 7rem;
+  }
+
+  @include desktop {
+    margin: 0 17.25rem 0 17.25rem;
+  }
+
+  &__img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.75rem;
+  }
+
+  &__text {
+    width: 14rem;
+    font-size: 0.8rem;
+
+    @include tablet {
+      width: 27rem;
+    }
+
+    @include desktop {
+      width: 29.75rem;
+    }
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__author {
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    font-family: $primary-font-demi;
+
+    @include tablet {
+      margin-right: 1rem;
+    }
+  }
+
+  &__date {
+    white-space: nowrap;
+    color: $bg-primary-color;
+  }
+}
