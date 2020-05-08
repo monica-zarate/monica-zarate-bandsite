@@ -16,10 +16,14 @@ let defaultComments = axios
     {}
   )
   .then((response) => {
+    let comment = document.querySelector(".comment");
+
     for (let i = 0; i < response.data.length; i++) {
       postAuthor = response.data[i].name;
       comments = response.data[i].comment;
       date = response.data[i].timestamp;
+      let post = `<div class="post"><img class="post__img" src="/assets/icons/PNG/usericon-grey.png"/><div class="post__text"><div class="post__text-wrapper"><h3 class="post__author">${postAuthor}</h3><span class="post__date">${date}</span></div><p class="post__content">${comments}</p></div></div>`;
+      comment.innerHTML = comment.innerHTML + post;
     }
   })
   .catch((error) => {
