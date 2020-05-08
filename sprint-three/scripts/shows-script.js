@@ -1,3 +1,7 @@
+// API Key
+
+// https://project-1-api.herokuapp.com/showdates/?api_key=9ce4d922-8e4b-49c1-b904-b4cb606cff1a
+
 //Shows Section
 
 var defaultShows = [
