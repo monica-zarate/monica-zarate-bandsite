@@ -8,7 +8,7 @@
 let postAuthor;
 let comments;
 let date;
-let commentsAPI =
+const commentsAPI =
   "https://project-1-api.herokuapp.com/comments/?api_key=9ce4d922-8e4b-49c1-b904-b4cb606cff1a";
 
 //Promise / Display Default Comments
@@ -33,7 +33,7 @@ displayComments = () => {
         let post = `<div class="post"><img class="post__img" src="/assets/icons/PNG/usericon-grey.png"/><div class="post__text"><div class="post__text-wrapper"><h3 class="post__author">${postAuthor}</h3><span class="post__date">${formattedDate}</span></div><p class="post__content">${comments}</p></div></div>`;
         comment.innerHTML = comment.innerHTML + post;
       }
-      var button = document.querySelector(".comment__btn");
+      let button = document.querySelector(".comment__btn");
       button.addEventListener("click", buttonHandler);
     })
     .catch((error) => {
@@ -46,10 +46,10 @@ displayComments = () => {
 function buttonHandler(event) {
   event.preventDefault();
 
-  var name = document.querySelector(".comment__input-username");
-  var nameText = name.value;
-  var content = document.querySelector(".comment__comment-area");
-  var contentText = content.value;
+  let name = document.querySelector(".comment__input-username");
+  let nameText = name.value;
+  let content = document.querySelector(".comment__comment-area");
+  let contentText = content.value;
 
   if (nameText !== "" && contentText !== "") {
     let newComment = {
@@ -74,7 +74,7 @@ function buttonHandler(event) {
 
 function clean() {
   let posts = document.querySelectorAll(".post");
-  for (var i = posts.length - 1; i >= 0; i--) {
+  for (let i = posts.length - 1; i >= 0; i--) {
     posts[i].remove();
   }
 }
