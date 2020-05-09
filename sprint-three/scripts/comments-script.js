@@ -8,97 +8,75 @@
 let postAuthor;
 let comments;
 let date;
+let commentsAPI =
+  "https://project-1-api.herokuapp.com/comments/?api_key=9ce4d922-8e4b-49c1-b904-b4cb606cff1a";
 
 //Promise / Display Default Comments
-let defaultComments = axios
-  .get(
-    "https://project-1-api.herokuapp.com/comments/?api_key=9ce4d922-8e4b-49c1-b904-b4cb606cff1a",
-    {}
-  )
-  .then((response) => {
-    let comment = document.querySelector(".comment");
+displayComments = () => {
+  let defaultComments = axios
+    .get(commentsAPI, {})
+    .then((response) => {
+      let comment = document.querySelector(".comment");
 
-    for (let i = 0; i < response.data.length; i++) {
-      postAuthor = response.data[i].name;
-      comments = response.data[i].comment;
-      date = response.data[i].timestamp;
-      let post = `<div class="post"><img class="post__img" src="/assets/icons/PNG/usericon-grey.png"/><div class="post__text"><div class="post__text-wrapper"><h3 class="post__author">${postAuthor}</h3><span class="post__date">${date}</span></div><p class="post__content">${comments}</p></div></div>`;
-      comment.innerHTML = comment.innerHTML + post;
-    }
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+      for (let i = response.data.length - 1; i >= 0; i--) {
+        postAuthor = response.data[i].name;
+        comments = response.data[i].comment;
+        date = response.data[i].timestamp;
+        let dateObject = new Date(date);
+        let formattedDate =
+          dateObject.getMonth() +
+          1 +
+          "/" +
+          dateObject.getDate() +
+          "/" +
+          dateObject.getFullYear();
+        let post = `<div class="post"><img class="post__img" src="/assets/icons/PNG/usericon-grey.png"/><div class="post__text"><div class="post__text-wrapper"><h3 class="post__author">${postAuthor}</h3><span class="post__date">${formattedDate}</span></div><p class="post__content">${comments}</p></div></div>`;
+        comment.innerHTML = comment.innerHTML + post;
+      }
+      var button = document.querySelector(".comment__btn");
+      button.addEventListener("click", buttonHandler);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
-// function displayComment(commentObject) {
-//   var post = document.createElement("div");
-//   post.classList.add("post");
-//   var comment = document.querySelector(".comment");
-//   comment.appendChild(post);
-//   var postImg = document.createElement("img");
-//   postImg.classList.add("post__img");
-//   post.appendChild(postImg);
-//   postImg.src = "/assets/icons/PNG/usericon-grey.png";
-//   var postText = document.createElement("div");
-//   postText.classList.add("post__text");
-//   post.appendChild(postText);
-//   var postTextWrapper = document.createElement("div");
-//   postTextWrapper.classList.add("post__text-wrapper");
-//   postText.appendChild(postTextWrapper);
-//   var postAuthor = document.createElement("h3");
-//   postAuthor.classList.add("post__author");
-//   postTextWrapper.appendChild(postAuthor);
-//   postAuthor.innerText = commentObject.name;
-//   var postDate = document.createElement("span");
-//   postDate.classList.add("post__date");
-//   postTextWrapper.appendChild(postDate);
-//   postDate.innerText = commentObject.date;
-//   var postContent = document.createElement("p");
-//   postContent.classList.add("post__content");
-//   postText.appendChild(postContent);
-//   postContent.innerText = commentObject.comment;
-// }
+// Button Event Handler / Add new Comments
 
-// for (var i = defaultComments.length - 1; i >= 0; i--) {
-//   displayComment(defaultComments[i]);
-// }
+function buttonHandler(event) {
+  event.preventDefault();
 
-// function buttonHandler(event) {
-//   event.preventDefault();
+  var name = document.querySelector(".comment__input-username");
+  var nameText = name.value;
+  var content = document.querySelector(".comment__comment-area");
+  var contentText = content.value;
 
-//   var name = document.querySelector(".comment__input-username");
-//   var nameText = name.value;
-//   var content = document.querySelector(".comment__comment-area");
-//   var contentText = content.value;
+  if (nameText !== "" && contentText !== "") {
+    let newComment = {
+      name: nameText,
+      comment: contentText,
+    };
+    axios
+      .post(commentsAPI, newComment)
+      .then((result) => {
+        clean();
+        displayComments();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } else {
+    alert("Please provide your Name and Comment");
+  }
+}
 
-//   var date =
-//     new Date().getMonth() +
-//     1 +
-//     "/" +
-//     new Date().getDate() +
-//     "/" +
-//     new Date().getFullYear();
+// Function clean to not duplicate comments
 
-//   var newComment = {
-//     name: nameText,
-//     date: date,
-//     comment: contentText,
-//   };
-//   defaultComments.push(newComment);
-//   clean();
-//   for (var i = defaultComments.length - 1; i >= 0; i--) {
-//     displayComment(defaultComments[i]);
-//   }
-//   content.value = "";
-//   name.value = "";
-// }
+function clean() {
+  let posts = document.querySelectorAll(".post");
+  for (var i = posts.length - 1; i >= 0; i--) {
+    posts[i].remove();
+  }
+}
 
-// function clean() {
-//   var posts = document.querySelectorAll(".post");
-//   for (var i = posts.length - 1; i >= 0; i--) {
-//     posts[i].remove();
-//   }
-// }
-
-// var button = document.querySelector(".comment__btn");
-// button.addEventListener("click", buttonHandler);
+displayComments();
