@@ -766,11 +766,18 @@ body {
   padding: 2rem 1rem;
   font-family: "Avenir Next Bold";
   color: #323232;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (min-width: 768px) {
   .comment {
     padding: 2rem 1.5rem;
+    margin: 0 auto;
   }
 }
 
@@ -784,6 +791,7 @@ body {
   color: #323232;
   font-size: 1.5rem;
   font-family: "Avenir Next Bold";
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -831,7 +839,7 @@ body {
 
 @media (min-width: 768px) {
   .comment__wrapper {
-    margin: 2.5rem 7rem 0 7rem;
+    margin: 2.5rem 6.25rem 0 6.25rem;
   }
 }
 
@@ -945,7 +953,7 @@ body {
 
 @media (min-width: 768px) {
   .post {
-    margin: 0 7rem;
+    margin: 0 6.25rem;
   }
 }
 
@@ -974,7 +982,7 @@ body {
 
 @media (min-width: 1440px) {
   .post__text {
-    width: 29.75rem;
+    width: 29.25rem;
   }
 }
 
