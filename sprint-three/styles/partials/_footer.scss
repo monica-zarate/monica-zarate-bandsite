@@ -4,7 +4,7 @@
   background-color: $primary-color;
   color: $bg-primary-color;
   font-family: $primary-font;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 2rem 0.75rem;
 
   @include tablet {
     padding: 2.5rem 1.5rem;
@@ -44,6 +44,7 @@
   &__social-wrapper {
     @extend .flex-center;
     justify-content: flex-start;
+    margin-left: 0.25rem;
 
     @include tablet {
       width: 30rem;
@@ -85,7 +86,7 @@
   }
 
   &__contact * {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 
     @include desktop {
       margin: 0;
@@ -99,6 +100,9 @@
 
     @include tablet {
       font-size: 0.9rem;
+    }
+    &--main {
+      margin-bottom: 2rem;
     }
   }
 
@@ -120,6 +124,7 @@
   &__copyright {
     font-size: 0.7rem;
     width: 65%;
+    margin-top: 2rem;
 
     @include tablet {
       font-size: 0.95rem;

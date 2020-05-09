@@ -41,6 +41,8 @@ displayComments = () => {
     });
 };
 
+// Comments are being displayed from newest to oldest according to API timestamp, which are different dates than the mockups.
+
 // Button Event Handler / Add new Comments
 
 function buttonHandler(event) {
