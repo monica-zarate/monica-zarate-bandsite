@@ -9,7 +9,7 @@
 
   @include desktop {
     width: 78.5rem;
-    padding: 3rem 11.5rem;
+    padding: 3rem 11.25rem;
     width: unset;
   }
 
@@ -37,12 +37,16 @@
 
     @include tablet {
       margin: 0;
+      width: 25%;
+      font-size: 0.75rem;
     }
     &--date {
       font-family: $primary-font-demi;
       margin: 0 0 1.5rem 0;
       @include tablet {
         margin: 0;
+        width: 20%;
+        font-size: 0.75rem;
       }
     }
 
@@ -56,31 +60,19 @@
         color: $divider-color;
         font-size: 1rem;
         margin: 2.5rem 0 0 0;
-        width: 68%;
+        width: 64%;
+        justify-content: space-between;
       }
 
       @include desktop {
         margin: 2.5rem 0 1.5rem 0;
+        width: 61.5%;
       }
     }
 
     &--mid {
       @include tablet {
-        margin-left: 9.4rem;
-      }
-
-      @include desktop {
-        margin-left: 11.5rem;
-      }
-    }
-
-    &--right {
-      @include tablet {
-        margin-left: 6.5rem;
-      }
-
-      @include desktop {
-        margin-left: 8.3rem;
+        margin-left: -2rem;
       }
     }
 
@@ -126,6 +118,8 @@
     border-radius: 4px;
     border: 1px solid $secondary-color;
     width: 100%;
+    max-width: 18rem;
+    margin: 0 auto;
 
     &__btn:hover {
       background-color: $btn-hover;
@@ -133,6 +127,9 @@
 
     @include tablet {
       padding: 1rem 2rem;
+      max-width: 10rem;
+      width: 100%;
+      font-size: 0.75rem;
     }
 
     @include desktop {

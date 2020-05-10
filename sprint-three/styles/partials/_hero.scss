@@ -85,11 +85,12 @@
   }
   // Mockup space between the title and the SoundCloud is 4 rem but had to reduce it to 2rem to make the content fit in, considering the height of the hero container.
   &__title {
-    margin: 0 1rem 2rem 1rem;
+    margin: 0 1rem 4rem 1rem;
     font-family: $primary-font-bold;
     color: $secondary-color;
     font-size: 2rem;
     line-height: 2.5rem;
+    width: 80%;
 
     @include tablet {
       margin: 0 1.5rem 3rem 1.5rem;
@@ -111,12 +112,12 @@
 
     @include tablet {
       padding: 0 1.5rem;
-      width: 63%;
+      max-width: 480px;
     }
 
     @include desktop {
-      margin-bottom: 1rem;
-      width: 27.25rem;
+      margin: 0 0 1rem 0;
+      width: 436px;
       padding: 0;
     }
   }
