@@ -120,8 +120,13 @@
     width: 100%;
     max-width: 18rem;
     margin: 0 auto;
+    outline: none;
 
-    &__btn:hover {
+    &:hover {
+      background-color: $btn-hover;
+    }
+
+    &:active {
       background-color: $btn-hover;
     }
 
